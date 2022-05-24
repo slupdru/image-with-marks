@@ -1,0 +1,16 @@
+.root {
+  position: absolute;
+  max-height: 100%;
+  width: 100%;
+  aspect-ratio: var(--image-width) / var(--image-height);
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+  // Формула использует ширину и высоту, устанавливает размер шрифта, который изменяется вместе
+  // с размером изображения. Формулу можно изменить и задавать базовое значение размера извне для каждой метки в отдельности.
+  --mark-font-size: min(
+    5vw * var(--image-height) / max(var(--image-height), var(--image-width)),
+    5vh * var(--image-width) / max(var(--image-height), var(--image-width))
+  );
+}
